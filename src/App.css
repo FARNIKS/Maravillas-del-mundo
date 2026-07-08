@@ -1,0 +1,204 @@
+/* Configura el contenedor raíz de React */
+#root {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+/* El mapa se estira por todo el navegador */
+#map-container {
+  height: 100%;
+  width: 100%;
+  background-color: #e5e5e5;
+}
+
+/* Panel lateral flotante oscuro estilo Atlas */
+.sidebar {
+  background-color: rgba(26, 37, 47, 0.95);
+  color: #fff;
+  padding: 20px;
+  width: 320px;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar h2 {
+  margin: 0 0 5px 0;
+  font-size: 24px;
+  color: #f1c40f;
+}
+
+.sidebar .subtitle {
+  margin: 0 0 20px 0;
+  font-size: 13px;
+  color: #bdc3c7;
+}
+
+/* Contenedor escroleable para las tarjetas */
+.lista-lugares {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  padding-right: 5px;
+}
+
+/* Estilo para cada botón/tarjeta de las Maravillas */
+.tarjeta-lugar {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 4px solid transparent;
+}
+
+.tarjeta-lugar:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-left-color: #f1c40f;
+  transform: translateX(3px);
+}
+
+.tarjeta-lugar h3 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+}
+
+.tarjeta-lugar p {
+  margin: 0;
+  font-size: 13px;
+  color: #bdc3c7;
+}
+
+/* Sección inferior con coordenadas */
+.coordenadas-info {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  font-family: monospace;
+  font-size: 11px;
+  border-radius: 4px;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #ecf0f1;
+}
+
+/* Botón de reseteo general */
+.reset-button {
+  background-color: #f1c40f;
+  color: #1a252f;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+.reset-button:hover {
+  background-color: #f39c12;
+}
+
+/* Personalización de la barra de scroll del menú lateral */
+.lista-lugares::-webkit-scrollbar {
+  width: 6px;
+}
+.lista-lugares::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+/* ==========================================================================
+   DISEÑO DEL POPUP MODAL (Aumento de especificidad sin !important)
+   ========================================================================== */
+
+#map-container .mapboxgl-popup-content {
+  padding: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.popup-card {
+  width: 260px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-image {
+  width: 100%;
+  height: 145px;
+  object-fit: cover;
+  border-bottom: 3px solid #f1c40f;
+}
+
+.popup-spacer {
+  width: 100%;
+  height: 15px;
+}
+
+.popup-body {
+  padding: 15px;
+}
+
+.popup-title {
+  margin: 0 0 2px 0;
+  color: #2c3e50;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.popup-country {
+  margin: 0 0 10px 0;
+  color: #95a5a6;
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.popup-description {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #5d6d7e;
+}
+
+/* Rediseño del botón de cerrar integrado de Mapbox */
+#map-container .mapboxgl-popup-close-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#map-container .mapboxgl-popup-close-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
